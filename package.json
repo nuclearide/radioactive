@@ -1,0 +1,14 @@
+{
+  "name": "radioactive",
+  "version": "0.0.1",
+  "repository": "https://github.com/nuclearide/radioactive.git",
+  "author": "Simon Hochrein <simon@ministrycrm.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "less": "^3.0.1",
+    "browser-sync": "^2.23.6"
+  },
+  "scripts": {
+    "test": "browser-sync start --serveStatic ./ -f '+(dist|test)/*'"
+  }
+}

@@ -1,0 +1,123 @@
+.button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  color: #FFFFFF;
+  transition: background ease .3s;
+  background: #8393A7;
+}
+.button:hover {
+  background: #74869c;
+}
+.button:active,
+.button:focus {
+  background: #677990;
+}
+.button.red {
+  background: #FF4751;
+}
+.button.red:hover {
+  background: #ff2d39;
+}
+.button.red:active,
+.button.red:focus {
+  background: #ff1421;
+}
+.button.orange {
+  background: #FF9947;
+}
+.button.orange:hover {
+  background: #ff8b2d;
+}
+.button.orange:active,
+.button.orange:focus {
+  background: #ff7d14;
+}
+.button.blue {
+  background: #0081D5;
+}
+.button.blue:hover {
+  background: #0072bc;
+}
+.button.blue:active,
+.button.blue:focus {
+  background: #0062a2;
+}
+.button.green {
+  background: #03BD5B;
+}
+.button.green:hover {
+  background: #03a44f;
+}
+.button.green:active,
+.button.green:focus {
+  background: #028b43;
+}
+div.progress {
+  background: #374355;
+  border: 1px solid #7b8eaa;
+  border-radius: 2px;
+}
+div.progress .fill {
+  border-radius: 2px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  display: block;
+  height: 6px;
+  background: linear-gradient(to right, #FFF547, #03BD5B);
+}
+.grid {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.grid .column {
+  flex: 1;
+  display: inline-block;
+}
+.grid .columns {
+  display: inline-block;
+}
+.grid .columns.two {
+  flex: 2;
+}
+.grid .columns.three {
+  flex: 3;
+}
+.grid .columns.four {
+  flex: 4;
+}
+.grid .columns.five {
+  flex: 5;
+}
+.grid .columns.six {
+  flex: 6;
+}
+.grid .columns.seven {
+  flex: 7;
+}
+.grid .columns.eight {
+  flex: 8;
+}
+.grid .columns.nine {
+  flex: 9;
+}
+.grid .columns.ten {
+  flex: 10;
+}
+.grid .columns.eleven {
+  flex: 11;
+}
+.grid .columns.twelve {
+  flex: 12;
+}
+body {
+  background: #3D4D65;
+  color: #EBEFF3;
+  font-family: "Open Sans";
+  text-align: center;
+  margin-left: 10%;
+  width: 80%;
+}

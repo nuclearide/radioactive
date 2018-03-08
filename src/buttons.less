@@ -1,0 +1,33 @@
+.button(@color) {
+    background: @color;
+    &:hover {
+        background: darken(@color, 5%);
+    }
+    &:active, &:focus {
+        background: darken(@color, 10%);
+    }
+}
+
+.button {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    color: #FFFFFF;
+    transition: background ease .3s;
+
+    .button(@gray-4);
+
+    &.red {
+        .button(@red);
+    }
+    &.orange {
+        .button(@orange);
+    }
+    &.blue {
+        .button(@blue);
+    }
+    &.green {
+        .button(@green);
+    }
+}
