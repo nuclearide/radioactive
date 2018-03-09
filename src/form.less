@@ -1,0 +1,34 @@
+@import "colors";
+
+.dropdown {
+    min-width: 100px;
+    display: inline-block;
+    background: @gray-6;
+    padding: 4px 10px;
+    border-radius: 8px;
+    position: relative;
+    height: 22px;
+    &.open {
+        height: auto;
+        .item {
+            &:hover {
+                background: lighten(@gray-6, 10%);
+            }
+        }
+    }
+    .fa {
+        position: absolute;
+        right: 7px;
+        top: 7px;
+    }
+    &:not(.open) .item {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+    .item {
+        transition: background .2s;
+        border-radius: 2px;
+    }
+}

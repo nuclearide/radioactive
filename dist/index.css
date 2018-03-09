@@ -113,11 +113,51 @@ div.progress .fill {
 .grid .columns.twelve {
   flex: 12;
 }
+.toolbar {
+  background: #2a3039;
+  height: 30px;
+  padding: 5px;
+}
+.darwin .toolbar {
+  padding-left: 80px;
+}
+.dropdown {
+  min-width: 100px;
+  display: inline-block;
+  background: #3D4D65;
+  padding: 4px 10px;
+  border-radius: 8px;
+  position: relative;
+  height: 22px;
+}
+.dropdown.open {
+  height: auto;
+}
+.dropdown.open .item:hover {
+  background: #506585;
+}
+.dropdown .fa {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+}
+.dropdown:not(.open) .item {
+  display: none;
+}
+.dropdown:not(.open) .item.active {
+  display: block;
+}
+.dropdown .item {
+  transition: background .2s;
+  border-radius: 2px;
+}
+.list {
+  padding-left: 4px;
+}
 body {
   background: #3D4D65;
   color: #EBEFF3;
   font-family: "Open Sans";
-  text-align: center;
-  margin-left: 10%;
-  width: 80%;
+  margin: 0;
+  padding: 0;
 }
