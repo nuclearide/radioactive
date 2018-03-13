@@ -9,13 +9,22 @@
     position: relative;
     height: 22px;
     width: 85%;
+    overflow: hidden;
     &.open {
         height: auto;
+        box-shadow: 0 0 0 1px @darkgray;
         .item {
+            margin-left: -10px;
+            padding: 4 10px;
+            margin-right: -10px;
+            &:first-child {
+                margin-top: -4px;
+            }
             &:hover {
                 background: lighten(@gray-6, 10%);
             }
         }
+        padding-bottom: 0px;
     }
     .fa {
         position: absolute;
