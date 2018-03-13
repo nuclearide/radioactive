@@ -1,0 +1,83 @@
+@grid-gutter-width: 16px;
+@line-height-computed: 16px;
+
+@screen-xs-max: 767px;
+@screen-sm-max: 991px;
+@screen-md-max: 1199px;
+
+// Horizontal and vertical offsets
+@x-0:       0;
+@x-xs:      (@grid-gutter-width / 4);    // 4px
+@x-sm:      (@grid-gutter-width / 2);    // 8px
+@x-md:      @grid-gutter-width;          // 16px
+@x-lg:      (@grid-gutter-width * 2);    // 32px
+@x-xl:      (@grid-gutter-width * 4);    // 64px
+
+@y-0:       0;
+@y-xs:      (@line-height-computed / 4); // 4px
+@y-sm:      (@line-height-computed / 2); // 8px
+@y-md:      @line-height-computed;       // 16px
+@y-lg:      (@line-height-computed * 2); // 32px
+@y-xl:      (@line-height-computed * 4); // 64px
+
+@positions: t top, r right, b bottom, l left;
+@sizes: 0, xs, sm, md, lg, xl;
+
+.axis(@i) when (mod(@i, 2) = 0) {
+    @axis: x;
+}
+.axis(@i) when (default()) {
+    @axis: y;
+}
+
+.prop(@property) when (@property = margin) {
+    @prop: m;
+}
+.prop(@property) when (@property = padding) {
+    @prop: p;
+}
+
+.rules(@prop, @pos, @sizes, @axis, @postfix, @property, @position, @i: 1) when (@i <= length(@sizes)) {
+
+    @size: extract(@sizes, @i);
+    @offset: ~"@{axis}-@{size}";
+
+    .@{prop}@{pos}-@{size}@{postfix} {
+        @{property}-@{position}: @@offset;
+    }
+
+    .rules(@prop, @pos, @sizes, @axis, @postfix, @property, @position, (@i + 1));
+}
+
+.ruleset(@positions, @property, @postfix: ~"", @i: 1) when (@i <= length(@positions)) {
+
+    @pos: extract(extract(@positions, @i), 1); 
+    @position: extract(extract(@positions, @i), 2);
+
+    .axis(@i);
+    .prop(@property);
+
+    .rules(@prop, @pos, @sizes, @axis, @postfix, @property, @position);
+
+    .ruleset(@positions, @property, @postfix, (@i + 1));
+}
+
+// Margin & padding modifiers
+.ruleset(@positions, margin);
+.ruleset(@positions, padding);
+
+// Responsive margin & padding modifiers
+@media (max-width: @screen-xs-max) {
+    .ruleset(@positions, margin, -sm);
+    .ruleset(@positions, padding, -sm);
+}
+
+@media (max-width: @screen-sm-max) {
+    .ruleset(@positions, margin, -md);
+    .ruleset(@positions, padding, -md);
+}
+
+@media (max-width: @screen-md-max) {
+    .ruleset(@positions, margin, -lg);
+    .ruleset(@positions, padding, -lg);
+}
