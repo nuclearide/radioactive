@@ -9,6 +9,7 @@
     "browser-sync": "^2.23.6"
   },
   "scripts": {
-    "test": "browser-sync start --serveStatic ./ -f '+(dist|test)/*'"
+    "test": "browser-sync start --serveStatic ./ -f '+(dist|test)/*'",
+    "start": "node build.js"
   }
 }
